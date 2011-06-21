@@ -1,0 +1,9 @@
+keeping track of changes to this js file as I move it from prototype to jquery. 
+
+Files to search:
+main.js
+/index.html
+
+$F replacement?
+
+new Tooltip("map"+k, "tooltip"+k); -- need a new Tooltip plugin

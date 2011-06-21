@@ -1,71 +1,44 @@
-function getTitle(anchorId, title2){
-    //create the anchor title which is sent to the lightbox as a caption
-    $(anchorId).title=title2;
-}
-
 function showList(id, extraAction)
 {
-
-	pId = "p" + id;
-	switchStyle = $(pId).getStyle('display');
+	// pId = "p" + id;
+	// switchStyle = $(pId).getStyle('display');
+	switchStyle = $('p#'+id).css('display');
 	if(switchStyle == 'none')
 	{
-		$(pId).show();
+		// $(pId).show();
+		$('p#'+id).show();
             if(extraAction) extraAction();
 	}else{
-		$(pId).hide();
+		// $(pId).hide();
+		$('p#'+id).hide();
             if(extraAction) extraAction();
 	}
-	$(pId).toggleClassName('hack');
-	$(id).hasClassName('expandedMenu');
-	$(id).toggleClassName('expandedMenu');
-}
-
-function switchClass1(id)
-{
-	aId = "a" + id;
-	$(aId).hasClassName('imagePos');
-	$(aId).toggleClassName('imagePos');
-}
-
-function showDetail(id, type)
-{
-	mId=type+id;
-	$(mId).show();
-}
-
-function hideDetail(id, type)
-{
-	mId=type+id;
-	$(mId).hide();
-}
-
-function showDetail2(id, type, divId)
-{
-	mId=type+id;
-	$(mId).show();
-}
-
-function hideDetail2(id, type, divId)
-{
-	mId=type+id;
-	$(mId).hide();
+	// $(pId).toggleClassName('hack');
+	$('p#'+id).toggle('hack');
+	// $(id).hasClassName('expandedMenu');
+	// $(id).hasClass('expandedMenu');
+	// $(id).toggleClassName('expandedMenu');
+	$(id).toggle('expandedMenu');
 }
 
 function getSidebar(id){
-    $('mapSide').update();
+    // $('mapSide').update();
+	$('#mapSide').empty();	
     var id1 = (id*1)-1;
     var id2 = (id*1)+1;
     id1 = id1+'';
     id2 = id2+'';
     //clear the sidebar
-    new Ajax.Request('../../../javascripts/maps.json?314786', {
-        method:'get',
+    // new Ajax.Request('../../../javascripts/maps.json?314786', {
+	$.getJSON('../../../javascripts/maps.json?314786', function(data) {
+        // method:'get',
+		// type:'get',
         //requestHeaders: {Accept: 'application/json'},
-        onSuccess: function(transport){
+        // onSuccess: function(transport){
  
-    	  var text = "/*-secure-\n"+transport.responseText+"\n*/";
-    	  text=text.evalJSON(true);
+    	  var text = "/*-secure-\n"+data.responseText+"\n*/";
+    	  // text=text.evalJSON(true);
+
     	  var k = text.maps.length;
     	  var counter = 1;
     	  if(id1=='0'){
@@ -83,10 +56,12 @@ function getSidebar(id){
         		          src = "../../"+text.maps[l].thumbnail;
         		      }
         		      if(counter == 1){
-        		          $('mapSide').insert('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Previous Map<br/><img width="70px" src="'+src+'" /></a></li>');
-        		          counter=counter+1;
+        		          // $('mapSide').insert('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Previous Map<br/><img width="70px" src="'+src+'" /></a></li>');
+        		        	$('#mapSide').append('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Previous Map<br/><img width="70px" src="'+src+'" /></a></li>');
+							counter=counter+1;
         		      }else if(counter == 2){
-        		          $('mapSide').insert('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Next Map<br/><img width="70px" src="'+src+'" /></a></li>');
+        		          // $('mapSide').insert('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Next Map<br/><img width="70px" src="'+src+'" /></a></li>');
+        		          $('#mapSide').append('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Next Map<br/><img width="70px" src="'+src+'" /></a></li>');
         		          counter=1;
         		      }
                     }
@@ -95,39 +70,24 @@ function getSidebar(id){
     });
 }
 
-function rotateImage()
-{	
-	var container = $('mapRotateHid')
-	var id = container.value *1;
-	if(container.value == 4)
-	{
-		var newId = 1;
-		container.value = newId;
-	}else{
-		var newId =  (id +1)
-		container.value = newId;
-	}
-	var showId = "mapContent"+newId;
-	var hideId = "mapContent"+ id;
-	$(hideId).hide();
-	Effect.Appear(showId);
-}
-
 function switchView(showId, hideId)
 {
-	$(hideId).hide();
-	$(showId).show();
-	$('switchOption').replace("<a id=\"switchOption\" onclick=\"switchView('"+hideId+"', '"+showId+"');\">Options</a>"); 
+	$('#'+hideId).hide();
+	$('#'+showId).show();
+	$('#switchOption').replace("<a id=\"switchOption\" onclick=\"switchView('"+hideId+"', '"+showId+"');\">Options</a>"); 
 }
 
 function sideHighlight(mapId, category){
     var cat = category.split(",");
     var anchor = mapId +'a';
-    var title = $(anchor).title;
-    $(anchor).title = '';
+    // var title = $(anchor).title;
+    // $(anchor).title = '';
+	$('#'+anchor).attr('title','');
     for(i=0;i<cat.length;i++){
-        if($(cat[i]).hasClassName('selected')==false){
-            $(cat[i]).toggleClassName('highlight');
+        // if($(cat[i]).hasClassName('selected')==false){
+		if($(cat[i]).hasClass('selected')==false){
+            // $(cat[i]).toggleClassName('highlight');
+			$(cat[i]).toggle('highlight');
         }   
     }
 }
@@ -135,19 +95,23 @@ function sideHighlight(mapId, category){
 function sideNormal(category){
     var cat = category.split(",");
     for(i=0;i<cat.length;i++){
-        if($(cat[i]).hasClassName('selected')==false){
-            $(cat[i]).toggleClassName('highlight');
+        // if($(cat[i]).hasClassName('selected')==false){
+		if($(cat[i]).hasClass('selected')==false){
+            // $(cat[i]).toggleClassName('highlight');
+			$(cat[i]).toggle('highlight');
         }
     }
 }
 
 function removeSelected(){
     var highlight = [];
-    highlight = ($$('li.selected'));
+    // highlight = ($$('li.selected'));
+	highlight =($'li.selected');
     var a = highlight.length;
     if(a>0){
         for(b=0;b<a;b++){
-          $(highlight[b]).removeClassName('selected');
+          // $(highlight[b]).removeClassName('selected');
+		$('#'+highlight[b]).removeClass('selected');
         }
     }
 }
@@ -161,11 +125,13 @@ if(window.location.hash.indexOf("#p")===0) {
 }
 
 function loadRandomMaps() {
-    new Ajax.Request('javascripts/maps.json?314786', {
-        method: 'get',
-	onSuccess: function(transport) {
-	    var text = "/*-secure-\n"+transport.responseText+"\n*/";
-	    var data = text.evalJSON(true);
+    // new Ajax.Request('javascripts/maps.json?314786', {
+	$.getJSON('../../../javascripts/maps.json?314786', function(data) {
+        // method: 'get',
+	// onSuccess: function(transport) {
+	    // var text = "/*-secure-\n"+tranport.responseText+"\n*/";
+		var text = "/*-secure-\n"+data.responseText+"\n*/";
+	    // var data = text.evalJSON(true);
 	    processRandomMaps(data.maps);
 	}
     });
@@ -185,33 +151,39 @@ function processRandomMaps(maps) {
     function updateMapTitle(container, id, title) {
         var text = "<a href='mapgallery/maps/detail/index.html?"+id+"#"+id+"'>"+title+"</a>";
         text = "<div class='threeLineAdjust'>"+text+"</div>";
-        $$(container).each(function(div) { div.update(text) });
+        // $$(container).each(function(div) { div.update(text) });
+		$(container).each(function(div) { div.update(text) });
     }
     function updateMapImage(container, id, image) {
         var text = "<img src='mapgallery/"+image+"' width='175' style='max-height:175px' />";
         text = "<a href='mapgallery/maps/detail/index.html?"+id+"#"+id+"'>"+text+"</a>";
-        $$(container).each(function(div) { div.update(text) });
+        // $$(container).each(function(div) { div.update(text) });
+		$(container).each(function(div) { div.update(text) });
     }
 }
 
 function loadMapData(callback) {
-    new Ajax.Request('../../../javascripts/maps.json?314786', {
-	method:'get',
-	onSuccess: function(transport) {
-	    var text = "/*-secure-\n"+transport.responseText+"\n*/";
-	    var data = text.evalJSON(true);
+    // new Ajax.Request('../../../javascripts/maps.json?314786', {
+	$.getJSON('../../../javascripts/maps.json?314786', function(data) {
+	// method:'get',
+	// onSuccess: function(transport) {
+	    // var text = "/*-secure-\n"+transport.responseText+"\n*/";
+		var text = "/*-secure-\n"+data.responseText+"\n*/";
+	    // var data = text.evalJSON(true);
 	    callback(data.maps);
 	}
     });
 }
 
 function loadMapGallery() {
-    new Ajax.Request('../javascripts/maps.json?314786', {
+    // new Ajax.Request('../javascripts/maps.json?314786', {
+	$.getJSON('../../../javascripts/maps.json?314786', function(data) {
 	method:'get',
 	//requestHeaders: {Accept: 'application/json'},
 	onSuccess: function(transport) {
-	    var text = "/*-secure-\n"+transport.responseText+"\n*/";
-	    var data = text.evalJSON(true);
+	    // var text = "/*-secure-\n"+transport.responseText+"\n*/";
+		var text = "/*-secure-\n"+data.responseText+"\n*/";
+	    // var data = text.evalJSON(true);
 	    mapList = data.maps;
 	    setupCategoryControls(data.categories);
 	    refreshMapGallery();
@@ -256,7 +228,8 @@ function setupCategoryControls(categoryChoices) {
 	(function(cat, catId){
 	    catUpdate[catId] = function(value){mapCategory(cat, value);};
 	    text += "<p><b>"+categoryTitle[cat]+"</b><br />";
-	    text += "<select id='catSelect"+catId+"' onchange=\"catUpdate["+catId+"]($F('catSelect"+catId+"'))\">";
+	    // text += "<select id='catSelect"+catId+"' onchange=\"catUpdate["+catId+"]($F('catSelect"+catId+"'))\">";
+		text += "<select id='catSelect"+catId+"' onchange=\"catUpdate["+catId+"]($('catSelect"+catId+"'))\">";
 	    text += "<option value='(all)'>(all)</option>";
 	    for(var i=0; i<categoryChoices[cat].length; i++) {
 		var item = categoryChoices[cat][i];
@@ -266,7 +239,8 @@ function setupCategoryControls(categoryChoices) {
 	})(cat, catId);
 	catId++;
     }
-    $("categoryControls").update(text);
+    // $("categoryControls").update(text);
+	$('#categoryControls').replaceWith(text);
 }
 
 // produce filteredList from mapList, containing only the maps that match currentCategory
@@ -312,15 +286,18 @@ function filteredMapList(mapList) {
 }
 
 function refreshMapGallery() {
-    $('testUl').update();
-    $('tooltipContainer').update();
+    // $('testUl').update();
+    //     $('tooltipContainer').update();
+	$('#testUl').empty();
+    $('#tooltipContainer').empty();
 
     var filteredList = filteredMapList(mapList);
 
     if(startAtMap>=filteredList.length) startAtMap = 0;
     refreshMapNav('mapNav1', startAtMap, filteredList.length);
     refreshMapNav('mapNav2', startAtMap, filteredList.length);
-    if(filteredList.length===0) $('mapNav2').update("");
+    // if(filteredList.length===0) $('mapNav2').update("");
+	if(filteredList.length===0) $('#mapNav2').empty();
 
     for(var k=startAtMap; k<startAtMap+9 && k<filteredList.length; k++) {
 	var map = filteredList[k];
@@ -337,17 +314,24 @@ function refreshMapGallery() {
 	if(map.thumbnail!==undefined) {
 	    src = map.thumbnail;
 	}
-	$('tooltipContainer').insert("<div id='tooltip"+k+"' class='tooltip'>"+tooltipText+"</div>");
-	$('testUl').insert('<li id="map'+k+'"><a id="'+map.title+'a" class="imageLink" href="maps/detail/index.html?'+map.id+'#'+map.id+'"><img style="max-width:200px; max-height:200px" class="imageReg3" src="'+src+'" /></a></li>');
+	// $('tooltipContainer').insert("<div id='tooltip"+k+"' class='tooltip'>"+tooltipText+"</div>");
+	// 	$('testUl').insert('<li id="map'+k+'"><a id="'+map.title+'a" class="imageLink" href="maps/detail/index.html?'+map.id+'#'+map.id+'"><img style="max-width:200px; max-height:200px" class="imageReg3" src="'+src+'" /></a></li>');
+	$('#tooltipContainer').append("<div id='tooltip"+k+"' class='tooltip'>"+tooltipText+"</div>");
+	$('#testUl').append('<li id="map'+k+'"><a id="'+map.title+'a" class="imageLink" href="maps/detail/index.html?'+map.id+'#'+map.id+'"><img style="max-width:200px; max-height:200px" class="imageReg3" src="'+src+'" /></a></li>');
+	
 	new Tooltip("map"+k, "tooltip"+k);
     }
 }
 
 function refreshSortingLinks() {
-    $('mapSorting').update("Sort maps by: ");
-    $('mapSorting').insert(sortingLink("Newest")+" ");
-    $('mapSorting').insert(sortingLink("Oldest")+" ");
-    $('mapSorting').insert(sortingLink("State (A-Z)"));
+    // $('mapSorting').update("Sort maps by: ");
+    //     $('mapSorting').insert(sortingLink("Newest")+" ");
+    //     $('mapSorting').insert(sortingLink("Oldest")+" ");
+    //     $('mapSorting').insert(sortingLink("State (A-Z)"));
+	$('#mapSorting').replaceWith("Sort maps by: ");
+    $('#mapSorting').append(sortingLink("Newest")+" ");
+    $('#mapSorting').append(sortingLink("Oldest")+" ");
+    $('#mapSorting').append(sortingLink("State (A-Z)"));
 }
 function sortingLink(category) {
     if(currentSort===category) {
@@ -407,19 +391,24 @@ function xmapCategory(category) {
     var cat = new Array();
     var links;
     removeSelected();
-    new Ajax.Request('../javascripts/maps.json?314786', {
-	method:'get',
+	$.getJSON('../../../javascripts/maps.json?314786', function(data) {
+    // new Ajax.Request('../javascripts/maps.json?314786', {
+    // 	method:'get',
 	//requestHeaders: {Accept: 'application/json'},
-	onSuccess: function(transport){
+	// onSuccess: function(transport){
 	    
-	    var text = "/*-secure-\n"+transport.responseText+"\n*/";
-	    text=text.evalJSON(true);
+	    // var text = "/*-secure-\n"+transport.responseText+"\n*/";
+		var text = "/*-secure-\n"+data.responseText+"\n*/";
+	    // text=text.evalJSON(true);
 	    var k = text.maps.length;
-	    $('testUl').update();
+	    // $('testUl').update();
+		$('#testUl').empty();
 	    //clears out the test div
 	    
-	    $(category).addClassName('selected');
-	    $(category).setStyle({});
+	    // $(category).addClassName('selected');
+		$(category).addClass('selected');
+	    // $(category).setStyle({});
+		$(category).css({});
 	    for(l=0;l<k;l++) {
 		cat[l]=[];
 		var i = text.maps[l].categories.length;
@@ -439,8 +428,10 @@ function xmapCategory(category) {
             		if(text.maps[l].thumbnail!==undefined) {
             		    src = text.maps[l].thumbnail;
             		}
-            		$('testUl').insert('<li id="'+text.maps[l].title+'" onmouseover="sideHighlight(this.id, \''+cat[l]+'\')" onmouseout="sideNormal(\''+cat[l]+'\')" class="\category'+text.maps[l].category+'\"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].src+'" rel="lightbox[roadtrip]" title="'+title1+'" onclick="getTitle(this.id, \''+title1+'\');"><img class="imageReg3" src="'+src+'" /></a></li>');
-        	    }
+            		// $('testUl').insert('<li id="'+text.maps[l].title+'" onmouseover="sideHighlight(this.id, \''+cat[l]+'\')" onmouseout="sideNormal(\''+cat[l]+'\')" class="\category'+text.maps[l].category+'\"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].src+'" rel="lightbox[roadtrip]" title="'+title1+'" onclick="getTitle(this.id, \''+title1+'\');"><img class="imageReg3" src="'+src+'" /></a></li>');
+        	    	$('#testUl').append('<li id="'+text.maps[l].title+'" onmouseover="sideHighlight(this.id, \''+cat[l]+'\')" onmouseout="sideNormal(\''+cat[l]+'\')" class="\category'+text.maps[l].category+'\"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].src+'" rel="lightbox[roadtrip]" title="'+title1+'" onclick="getTitle(this.id, \''+title1+'\');"><img class="imageReg3" src="'+src+'" /></a></li>');
+            	
+				}
                 }
 		
 	    }
