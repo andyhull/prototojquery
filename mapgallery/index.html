@@ -12,20 +12,19 @@
 
 <!--Stuff from CEHI development-->
 <link href="../styles/maingallery.css" rel="stylesheet" type="text/css" media="all"/>
-<script type="text/javascript" src="../javascripts/prototype.js"></script>
+<!-- <script type="text/javascript" src="../javascripts/prototype.js"></script>
 <script type="text/javascript" src="../javascripts/scriptaculous.js"></script>
 <script type="text/javascript" src="../javascripts/effects.js"></script>
 <script type="text/javascript" src="../javascripts/builder.js"></script>
 <script type="text/javascript" src="../javascripts/lightbox.js"></script>
 <script type="text/javascript" src="../javascripts/tooltip.js"></script>
-<script type="text/javascript" src="../javascripts/cookiejar.js"></script>
+<script type="text/javascript" src="../javascripts/cookiejar.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <script type="text/javascript" src="../javascripts/main.js"></script>
 <link rel="stylesheet" href="../styles/lightbox.css" type="text/css" media="screen" />
 <script type="text/javascript">
-Event.observe(window,'load', function()
-{
-//Prototype goodness here
-loadMapGallery();
+$(document).ready(function() {
+	loadMapGallery();
 });
 </script>
 <!-- Begin Survey scripts -->

@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" 		content="" />
+<meta name="DC.Subject" 	content="" />
+<meta name="DC.Language" 	scheme="ISO 639-2" content="eng" />
+<title>CDC - Diabetes Prevalence by County</title>
+<style type="text/css" media="tv">empty{color:#000};@import "http://www.cdc.gov/TemplatePackage/css/B/wysiwyg/wysiBaseHome.css"/**/;</style>
+<style type="text/css" media="screen, projection">@import "/TemplatePackage/css/B/base-float.css"/**/;</style>
+
+<!--Stuff from CEHI development-->
+<!-- <script type="text/javascript" src="../../../javascripts/prototype.js"></script>
+<script type="text/javascript" src="../../../javascripts/scriptaculous.js"></script>
+<script type="text/javascript" src="../../../javascripts/cookiejar.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script type="text/javascript" src="../../../javascripts/main.js"></script>
+<script type="text/javascript">
+// Event.observe(window,'load', function() {
+// getSidebar('4');
+// });
+$(document).ready(function() {
+	getSidebar('4');
+});
+</script>
+<link href="../../../styles/maingallery.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Begin Survey scripts -->
+
+<script type="text/javascript" src="http://www.cdc.gov/JScript/triggerParams.js"></script>
+
+<script type="text/javascript" src="http://www.cdc.gov/JScript/stdLauncher.js"></script>
+
+<script type="text/javascript">Poll();</script>
+
+<!-- End Survey scripts --><!-- Local Topic Styles -->
+<!-- InstanceBeginEditable name="local-css" -->
+<style type="text/css" media="all">
+@import "/TemplatePackage/local/B/css/local.css"/**/;
+</style>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head-stuff" --><!-- TemplateParam name="content" type="boolean" value="true" --><!-- TemplateParam name="id" type="text" value="index" --><!-- TemplateParam name="class" type="text" value="homepage" --><!-- InstanceEndEditable -->
+<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="../../../styles/ie6.css"><![endif]-->
+</head><!-- InstanceBeginEditable name="body-stuff" -->
+
+<body id="@@(id)@@" class="@@(_document['class'])@@">
+
+<div id="wrapper" style="position:relative">
+	<div class="top">
+	</div>
+	<div id="branding">
+		<div id="branding-logo">
+			<span id="homeward"><a href="http://www.cdc.gov/" title="Return to the CDC Home Page">CDC Home</a></span>
+			<div id="branding-logoImage">
+				<img width="470" height="47" border="0" align="left" alt="Centers for Disease Control and Prevention - Your Online Source for Credible Health Information" src="/TemplatePackage/images/cdcHeaderLogo.gif"/>
+				<a title="Centers for Disease Control and Prevention - Your Online Source for Credible Health Information" href="http://www.cdc.gov/">
+				</a>
+				<div style="font-size:120%;float:right;">
+					<h1 style="font-size:150%;">Prototype site for testing only</h1>
+					<a href="../../../feedback/index.php"><strong>Tell us what you think</strong></a></div>
+				</div>
+		</div>
+		<div id="topic-title"><h2 style="font-weight:bold;">Chronic Disease GIS Exchange</h2>
+<div class="subtitle">Produced by the Division for Heart Disease and Stroke Prevention</div>
+</div>
+
+<div id="breadBox">
+  <ul id="breadcrumbs">
+    <li class="firstChild"><a href="../../../index.html">GIS Exchange Home</a></li>
+    <li><a href="../../index.html">Map Gallery</a></li>
+    <li><a href="index.html">Map Details</a></li>
+  </ul>
+</div>
+
+	</div>
+	
+	<div id="content" style="position:relative"><!-- TemplateBeginIf cond="content" -->
+		<div id="content-inner" style="margin:0; position:relative">
+						
+			<div id="content-main" style="position:relative">
+				<div class="main-inner" style="position:relative">
+					<!-- TemplateBeginEditable name="features" -->
+					<div id="top-container" style="position:relative">
+					  <div id="mainGallery2" style="width:980px">
+
+					    <div id="gallerySide" class="mapDetailSidebar" style="float:left; width:100px; background:#fff;border:none;width:278px;padding:0 5px 0 5px;min-height:0px">
+					      <div id="jsBackLink" class="mapDetailNav"></div>
+					      <div class="mapDetailNav">
+					        <div class="left" id="jsMapPrevious">&nbsp;</div>
+					        <div class="right" id="jsMapNext">&nbsp;</div>
+					        <span id="jsMapSequence"></span>
+					      </div>
+					      <div class="mapSidebarInner" style="padding:4px">
+					        <div class="title" id="jsMapTitle"></div>
+					        <p class="abstract" id="jsMapAbstract"></p>
+                                                <div class="section">
+					          <a href="#" id="softwareUsed" class="collapsedMenu" onclick="showList(this.id, refreshMap);return false;">Software used</a>
+					          <p id="psoftwareUsed" style="display:none;"><span id="jsSoftwareUsed"></span></p>
+					          <a href="#" id="dataUsed" class="collapsedMenu" onclick="showList(this.id, refreshMap);return false;">Data used</a>
+					          <p id="pdataUsed" style="display:none;"><span id="jsDataUsed"></span></p>
+					          <a href="#" id="methodsUsed" class="collapsedMenu" onclick="showList(this.id, refreshMap);return false;">Methods used</a>
+					          <p id="pmethodsUsed" style="display:none;"><span id="jsMethodsUsed"></span></p>
+                                                </div>
+                                                <div class="section">
+					          <a href="#" id="contactCreator" class="collapsedMenu" onclick="showList(this.id, refreshMap);return false;">Contact the submitter of this map</a>
+					          <p id="pcontactCreator" style="display:none"><span id="jsContactCreator"></span></p>
+					          <a href="#" id="howToCite" class="collapsedMenu" onclick="showList(this.id, refreshMap);return false;">How to cite this map</a>
+					          <p id="phowToCite" style="display:none"><span id="jsHowToCite"></span></p>
+					          <a href="#" id="context" class="collapsedMenu" onclick="showList(this.id, refreshMap);return false;">See related links</a>
+					          <p id="pcontext" style="display:none"><span id="jsContext"></span></p>
+                                                </div>
+					      </div>
+					      <ul id="mapSide" style="display:none"></ul>
+					    </div>
+
+                                            <div class="mapGridColumn" style="float:right">
+					      <div id="mapGrid" style="position:relative; padding:19px 19px 27px 19px; width:645px; min-height:100px; margin-bottom:12px; margin-left:6px; border-left:1px solid #ccc; text-align:center">
+					        <div id="jsMapImage"></div>
+						<div class="disclaimer">The maps on this site have been approved by the submitting institution for public dissemination.</div>
+					      </div>
+					      <div class="mapSidebarInner" style="padding:4px; margin-left:6px"><h3 style="text-align:center; padding-left:14px" id="jsMapPdf"></h3></div>
+					    </div>
+
+					  </div>
+					  
+					  
+					  <div id="bodyFoot">
+					    <ul>
+					      <li><a href="../../../about.html">Learn more about the site</a></li>
+					    </ul>
+					  </div>
+					</div><!-- End #top-container -->
+					<!-- TemplateEndEditable -->
+				
+					<div id="bottom-container"><!-- TemplateBeginEditable name="content-main" -->
+	
+					<!-- TemplateEndEditable --><!-- End #bottom-container --></div>
+					
+				<!-- End .main-inner --></div>
+			<!-- End #content-main--></div>
+		<!-- End #content-inner --></div>
+		
+		<!-- ########## RIGHT COLUMN STARTS HERE ########## -->
+
+		<!-- TemplateEndIf -->
+	
+	<div class="preFoot">
+		<div class="pageOptions-horizontal">
+			<ul class="services">
+				<li class="email"><a href="http://www.cdc.gov/email.do" onclick="openRequestedPopup(); return false;">Email</a></li>
+
+<li class="print"><a href="javascript:window.print();">Print</a></li>
+
+<li class="share" id="share-horizontal"><a href="#">Share</a>
+
+	<ul>
+
+		<li class="addthisto">Add this to...</li>
+
+<li class="favorites"><a href="javascript:openBookmarkSite('favorites');" class="skip">Favorites</a></li>
+
+<li class="delicious"><a href="#" class="skip" onclick="openBookmarkSite('delicious');">Del.icio.us</a></li>
+
+<li class="digg"><a href="#" class="skip" onclick="openBookmarkSite('digg');">Digg</a></li>
+
+<li class="facebook"><a href="#" class="skip" onclick="openBookmarkSite('facebook');">Facebook</a></li>
+
+<li class="google"><a href="#" class="skip" onclick="openBookmarkSite('google');">Google Bookmarks</a></li>
+
+<li class="technorati"><a href="#" class="skip" onclick="openBookmarkSite('technorati');">Technorati</a></li>
+
+<li class="yahoo"><a href="#" class="skip" onclick="openBookmarkSite('yahoo-myweb');">Yahoo MyWeb</a></li>
+
+	</ul>
+
+</li>			</ul>
+		</div>
+		
+		<div id="datestamp">
+			<ul>
+				<li class="last-reviewed">Page last reviewed: <span>September 1, 2010</span></li>
+				<li class="last-updated">Page last updated: <span>September 1, 2010</span></li>
+				<li class="content-source">Content source: <a href="http://www.cdc.gov/">Centers for Disease Control and Prevention</a></li>
+			</ul>
+		</div>
+  	</div>
+	
+	<!-- End #content --></div>
+
+	<div id="siteinfo">
+
+	<div id="siteinfo-nav">
+
+		<ul class="menu">
+
+			<li><a href="http://www.cdc.gov/">Home</a></li>
+
+			<li><a href="http://www.cdc.gov/az/a.html">A-Z Index</a></li>
+
+			<li><a href="http://www.cdc.gov/Other/site_map.html">Site Map</a></li>
+
+			<li><a href="http://www.cdc.gov/Other/policies.html">Policies</a></li>
+
+			<li><a href="http://www.cdc.gov/Other/about_cdcgov.html">About CDC.gov</a></li>
+
+			<li><a href="http://www.cdc.gov/Other/link.html">Link to Us</a></li>
+
+			<li><a href="http://www.cdc.gov/Other/languages/">All Languages</a></li>
+
+			<li><a href="http://www.cdc.gov/mobile/">CDC Mobile</a></li>
+
+			<li class="last-child"><a href="http://www.cdc.gov/contact/">Contact CDC</a></li>
+
+		</ul>
+
+	</div>
+
+	<div id="siteinfo-credits">
+
+		<div id="siteinfo-logos"><a href="http://www.usa.gov/"><img id="logo_usagov" src="/TemplatePackage/images/logo_usagov.gif" alt="USA.gov: The U.S. Government's Official Web Portal" width="188" height="55" border="0" /></a><a href="http://www.hhs.gov/"><img id="logo_dhhs" src="/TemplatePackage/images/logo_dhhs.gif" alt="Department of Health and Human Services" width="61" height="55" border="0" /></a></div>
+
+		<address>Centers for Disease Control and Prevention &nbsp; 1600 Clifton Rd. Atlanta, GA 30333, USA<br />
+
+		800-CDC-INFO (800-232-4636)	TTY: (888) 232-6348, 24 Hours/Every Day - <a href="mailto:cdcinfo@cdc.gov">cdcinfo@cdc.gov</a></address>
+
+	</div>
+
+</div>        	
+<!-- End #wrapper --></div>
+
+<script>
+var maps;
+var mapId;
+function showMap(newMapId) {
+  mapId = newMapId;
+  var map, sequence, nextId, previousId, pageId;
+  window.location.hash = "#"+mapId;
+  for(var i=0; i < maps.length; i++) {
+    if(maps[i].id==mapId) {
+      map=maps[i];
+      sequence=i+1;
+      if(i>0) previousId = maps[i-1].id;
+      if(i < maps.length-1) nextId = maps[i+1].id;
+      pageId = Math.floor(i/9);
+    }
+  }
+  // if(!map) return;
+  // element("#jsMapTitle").update(field("title"));
+  // document.title = "CDC - "+field("title");
+  // element("#jsMapAbstract").update(field("abstract"));
+  // element("#jsMapImage").update("<img src='../../"+field("src")+"' style='max-width:645px; max-height:545px; border:1px solid #ccc' alt='"+field("text508")+"'/>");
+  // element("#jsBackLink").update("<a href='../../index.html?"+pageId+"#p"+pageId+"'>Back to Search Results</a>");
+  // element("#jsMapSequence").update("Map "+sequence+" of "+maps.length);
+  // if(previousId) element("#jsMapPrevious").update('<a href="#" onclick="showMap('+previousId+');return false">&laquo; Previous</a>');
+  // else element("#jsMapPrevious").update("&nbsp;");
+  // if(nextId) element("#jsMapNext").update('<a href="#" onclick="showMap('+nextId+');return false">Next &raquo;</a>');
+  // else element("#jsMapNext").update("&nbsp;");
+  // element("#jsMapPdf").update("<a href='../../"+field("pdf")+"' style='text-decoration:underline !important'>Download a PDF of this map.</a>");
+  // element("#jsSoftwareUsed").update(field("softwareUsed"));
+  // element("#jsDataUsed").update(field("dataUsed"));
+  // element("#jsMethodsUsed").update(field("methodsUsed"));
+  // var contactInfo = field("contactName")+", "+field("contactPosition")+", "+field("contactOrganization")+"<br />"+field("contactPhone")+"<br /><a href='mailto:"+field("contactEmail")+"'>"+field("contactEmail")+"</a>"
+  // element("#jsContactCreator").update(contactInfo);
+  // var date = new Date();
+  // var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  // var dateStamp = months[date.getMonth()]+" "+date.getDate()+", "+date.getFullYear();
+  // element("#jsHowToCite").update(field("uniqueId")+", "+dateStamp);
+  // element("#jsContext").update(field("mapLinks"));
+
+
+  if(!map) return;
+  $("#jsMapTitle").replaceWith(field("title"));
+  document.title = "CDC - "+field("title");
+  $("#jsMapAbstract").replaceWith(field("abstract"));
+  $("#jsMapImage").replaceWith("<img src='../../"+field("src")+"' style='max-width:645px; max-height:545px; border:1px solid #ccc' alt='"+field("text508")+"'/>");
+  $("#jsBackLink").replaceWith("<a href='../../index.html?"+pageId+"#p"+pageId+"'>Back to Search Results</a>");
+  $("#jsMapSequence").replaceWith("Map "+sequence+" of "+maps.length);
+  if(previousId) $("#jsMapPrevious").replaceWith('<a href="#" onclick="showMap('+previousId+');return false">&laquo; Previous</a>');
+  else $("#jsMapPrevious").replaceWith("&nbsp;");
+  if(nextId) $("#jsMapNext").replaceWith('<a href="#" onclick="showMap('+nextId+');return false">Next &raquo;</a>');
+  else $("#jsMapNext").replaceWith("&nbsp;");
+  $("#jsMapPdf").replaceWith("<a href='../../"+field("pdf")+"' style='text-decoration:underline !important'>Download a PDF of this map.</a>");
+  $("#jsSoftwareUsed").replaceWith(field("softwareUsed"));
+  $("#jsDataUsed").replaceWith(field("dataUsed"));
+  $("#jsMethodsUsed").replaceWith(field("methodsUsed"));
+  var contactInfo = field("contactName")+", "+field("contactPosition")+", "+field("contactOrganization")+"<br />"+field("contactPhone")+"<br /><a href='mailto:"+field("contactEmail")+"'>"+field("contactEmail")+"</a>"
+  $("#jsContactCreator").replaceWith(contactInfo);
+  var date = new Date();
+  var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var dateStamp = months[date.getMonth()]+" "+date.getDate()+", "+date.getFullYear();
+  $("#jsHowToCite").replaceWith(field("uniqueId")+", "+dateStamp);
+  $("#jsContext").replaceWith(field("mapLinks"));
+  function element(selector) {
+    return $$(selector)[0];
+  }
+  function field(name) {
+    if(map[name]===undefined) {
+      return "";
+    } else {
+      return map[name];
+    }
+  }
+}
+loadMapData(function(mapData) {
+  maps = filteredMapList(mapData);
+  mapId = window.location.hash.substr(1);
+  refreshMap();
+});
+function refreshMap() {
+  showMap(mapId);
+}
+</script>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1177695-7");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
