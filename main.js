@@ -49,25 +49,26 @@ function getSidebar(id){
     		  for(l=0;l<k;l++)
     		  {
     		      var mapId = text.maps[l].id;
-                    if(mapId ==id1 || mapId ==id2){
-                      //if optional thumbnail is present, show it in the map index instead of full image
-		              var src = text.maps[l].src;
-        		      if(text.maps[l].thumbnail!==undefined){
-        		          src = "../../"+text.maps[l].thumbnail;
-        		      }
-        		      if(counter == 1){
-        		          // $('mapSide').insert('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Previous Map<br/><img width="70px" src="'+src+'" /></a></li>');
-        		        	$('#mapSide').append('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Previous Map<br/><img width="70px" src="'+src+'" /></a></li>');
-							counter=counter+1;
-        		      }else if(counter == 2){
-        		          // $('mapSide').insert('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Next Map<br/><img width="70px" src="'+src+'" /></a></li>');
-        		          $('#mapSide').append('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Next Map<br/><img width="70px" src="'+src+'" /></a></li>');
-        		          counter=1;
-        		      }
-                    }
-    		  }
-    	  }
-    });
+                    if(mapId ==id1 || mapId ==id2)
+					{
+                      	//if optional thumbnail is present, show it in the map index instead of full image
+			              var src = text.maps[l].src;
+	        		      if(text.maps[l].thumbnail!==undefined)
+						  {
+	        		          src = "../../"+text.maps[l].thumbnail;
+	        		      }
+	        		      if(counter == 1){
+	        		          // $('mapSide').insert('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Previous Map<br/><img width="70px" src="'+src+'" /></a></li>');
+	        		        	$('#mapSide').append('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Previous Map<br/><img width="70px" src="'+src+'" /></a></li>');
+								counter=counter+1;
+	        		      }else if(counter == 2){
+	        		          // $('mapSide').insert('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Next Map<br/><img width="70px" src="'+src+'" /></a></li>');
+	        		          $('#mapSide').append('<li id="'+text.maps[l].title+'"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].page+'">Next Map<br/><img width="70px" src="'+src+'" /></a></li>');
+	        		          counter=1;
+	        		     }
+				}
+		}
+	});
 }
 
 function switchView(showId, hideId)
@@ -106,7 +107,7 @@ function sideNormal(category){
 function removeSelected(){
     var highlight = [];
     // highlight = ($$('li.selected'));
-	highlight =($'li.selected');
+	highlight = $('li.selected');
     var a = highlight.length;
     if(a>0){
         for(b=0;b<a;b++){
@@ -133,8 +134,7 @@ function loadRandomMaps() {
 		var text = "/*-secure-\n"+data.responseText+"\n*/";
 	    // var data = text.evalJSON(true);
 	    processRandomMaps(data.maps);
-	}
-    });
+   });
 }
 
 function processRandomMaps(maps) {
@@ -171,23 +171,22 @@ function loadMapData(callback) {
 		var text = "/*-secure-\n"+data.responseText+"\n*/";
 	    // var data = text.evalJSON(true);
 	    callback(data.maps);
-	}
     });
 }
 
 function loadMapGallery() {
     // new Ajax.Request('../javascripts/maps.json?314786', {
 	$.getJSON('../../../javascripts/maps.json?314786', function(data) {
-	method:'get',
+	// method:'get',
 	//requestHeaders: {Accept: 'application/json'},
-	onSuccess: function(transport) {
+	// onSuccess: function(transport) {
 	    // var text = "/*-secure-\n"+transport.responseText+"\n*/";
 		var text = "/*-secure-\n"+data.responseText+"\n*/";
 	    // var data = text.evalJSON(true);
 	    mapList = data.maps;
 	    setupCategoryControls(data.categories);
 	    refreshMapGallery();
-	}
+	// }
     });
 }
 
@@ -432,10 +431,8 @@ function xmapCategory(category) {
         	    	$('#testUl').append('<li id="'+text.maps[l].title+'" onmouseover="sideHighlight(this.id, \''+cat[l]+'\')" onmouseout="sideNormal(\''+cat[l]+'\')" class="\category'+text.maps[l].category+'\"><a id="'+text.maps[l].title+'a" href="'+text.maps[l].src+'" rel="lightbox[roadtrip]" title="'+title1+'" onclick="getTitle(this.id, \''+title1+'\');"><img class="imageReg3" src="'+src+'" /></a></li>');
             	
 				}
-                }
-		
-	    }
-	}
+           }
+		}
     });
 }
 
