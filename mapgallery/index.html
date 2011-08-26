@@ -1,70 +1,119 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><!-- InstanceBegin template="/Templates/MasterControl.dwt" codeOutsideHTMLIsLocked="false" -->
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="head-stuff" --><!-- TemplateParam name="id" type="text" value="undefined" --><!-- TemplateParam name="class" type="text" value="widePage" --><!-- InstanceEndEditable --><!-- InstanceParam name="content" type="boolean" value="true" passthrough="true" --><!-- InstanceParam name="optionSpanish" type="boolean" value="false" passthrough="true" --><!-- InstanceParam name="OptionalLocalSearch" type="boolean" value="false" passthrough="true" --><!-- InstanceParam name="OptionalLocalA-Z" type="boolean" value="false" passthrough="true" --><!-- InstanceParam name="optionalExtra" type="boolean" value="false" passthrough="true" -->
+<!-- TemplateBeginPassthroughIf cond="optionSpanish" --><meta http-equiv="content-type" content="text/html; charset=iso-8859-1" /><!-- TemplateEndPassthroughIf --><!-- TemplateBeginPassthroughIf cond="optionSpanish!=true" --><meta http-equiv="content-type" content="text/html; charset=utf-8" /><!-- TemplateEndPassthroughIf -->
+<!-- InstanceBeginEditable name="meta-data" -->
 <meta name="Keywords" 		content="" />
 <meta name="DC.Subject" 	content="" />
 <meta name="DC.Language" 	scheme="ISO 639-2" content="eng" />
-<title>CDC - GIS Exchange - Map Gallery Index – DHDSP</title>
-<style type="text/css" media="tv">empty{color:#000};@import "http://www.cdc.gov/TemplatePackage/css/B/wysiwyg/wysiBaseHome.css"/**/;</style>
-<style type="text/css" media="screen, projection">@import "/TemplatePackage/css/B/base-float.css"/**/;</style>
+<!-- InstanceEndEditable -->
+<meta name="template.version" content="2.3.0" />
+<!-- @package: TemplatePackage 'B' @version: "2.3.0" -->
+<!-- InstanceBeginEditable name="title-tag" -->
+<title>CDC - .: WidePage :.</title>
+<!-- InstanceEndEditable -->
+<style type="text/css" media="tv">
+empty{color:#000};@import "http://www.cdc.gov/TemplatePackage/css/B/wysiwyg/wysiBaseHome.css"/**/;
+</style>
+<style type="text/css" media="screen, projection">
+@import "/TemplatePackage/css/B/base-float.css"/**/;
+</style>
+<!--#include virtual="/TemplatePackage/includes/B/css-float_javascripts.html" -->
+<!--#include virtual="/TemplatePackage/includes/B/acsi_survey.html" -->
 
 <!--Stuff from CEHI development-->
-<link href="../styles/maingallery.css" rel="stylesheet" type="text/css" media="all"/>
-<!-- <script type="text/javascript" src="../javascripts/prototype.js"></script>
-<script type="text/javascript" src="../javascripts/scriptaculous.js"></script>
-<script type="text/javascript" src="../javascripts/effects.js"></script>
-<script type="text/javascript" src="../javascripts/builder.js"></script>
-<script type="text/javascript" src="../javascripts/lightbox.js"></script>
-<script type="text/javascript" src="../javascripts/tooltip.js"></script>
-<script type="text/javascript" src="../javascripts/cookiejar.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-<script type="text/javascript" src="../javascripts/main.js"></script>
-<link rel="stylesheet" href="../styles/lightbox.css" type="text/css" media="screen" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> 
+<script type="text/javascript" src="/DHDSP/maps/gisx/javascripts/jquery.cookie.js"></script>
+<link href="/DHDSP/maps/gisx/styles/maingallery.css" rel="stylesheet" type="text/css" media="all"/>
+<script language="JavaScript" type="text/javascript" src="http://wwwdev.cdc.gov/JScript/H/v15/s_code_wwwdev.js"></script>
+<script type="text/javascript" src="/DHDSP/maps/gisx/javascripts/main.js"></script>
+<link rel="stylesheet" href="/DHDSP/maps/gisx/styles/lightbox.css" type="text/css" media="screen" />
 <script type="text/javascript">
 $(document).ready(function() {
 	loadMapGallery();
 });
 </script>
-<!-- Begin Survey scripts -->
-
-<script type="text/javascript" src="http://www.cdc.gov/JScript/triggerParams.js"></script>
-
-<script type="text/javascript" src="http://www.cdc.gov/JScript/stdLauncher.js"></script>
-
-<script type="text/javascript">Poll();</script>
-
-<!-- End Survey scripts --><!-- Local Topic Styles -->
+<!-- TemplateBeginPassthroughIf cond="optionalExtra" --><!-- InstanceBeginEditable name="extra-stuff" --><!-- InstanceEndEditable --><!-- TemplateEndPassthroughIf -->
+<!-- Local Topic Styles -->
 <!-- InstanceBeginEditable name="local-css" -->
 <style type="text/css" media="all">
 @import "/TemplatePackage/local/B/css/local.css"/**/;
 </style>
 <!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="head-stuff" --><!-- TemplateParam name="content" type="boolean" value="true" --><!-- TemplateParam name="id" type="text" value="index" --><!-- TemplateParam name="class" type="text" value="homepage" --><!-- InstanceEndEditable -->
-<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="../styles/ie6.css"><![endif]-->
 </head><!-- InstanceBeginEditable name="body-stuff" -->
 
-<body id="@@(id)@@" class="@@(_document['class'])@@">
+<!-- TemplateBeginIf cond="optionSpanish" --><!-- TemplateBeginIf cond="_document['OptionalLocalSearch']" --><body id="@@(id)@@" class="@@(_document['class'])@@ esp localSearch"><!-- TemplateEndIf --><!-- TemplateBeginIf cond="_document['OptionalLocalSearch']!=true" --><body id="@@(id)@@" class="@@(_document['class'])@@ esp"><!-- TemplateEndIf --><!-- TemplateEndIf --><!-- TemplateBeginIf cond="optionSpanish!=true" --><!-- TemplateBeginIf cond="_document['OptionalLocalSearch']" --><body id="@@(id)@@" class="@@(_document['class'])@@ localSearch"><!-- TemplateEndIf --><!-- TemplateBeginIf cond="_document['OptionalLocalSearch']!=true" --><body id="@@(id)@@" class="@@(_document['class'])@@"><!-- TemplateEndIf --><!-- TemplateEndIf -->
+
+<!-- TemplateBeginIf cond="optionSpanish" --><!-- TemplateBeginIf cond="OptionalLocalSearch" --><!--#include virtual="/TemplatePackage/includes/B/esp/inc-skipmenuW-localSearch.html" --><!-- TemplateEndIf --><!-- TemplateBeginIf cond="OptionalLocalSearch!=true" --><!--#include virtual="/TemplatePackage/includes/B/esp/inc-skipmenu-wide.html" --><!-- TemplateEndIf --><!-- TemplateEndIf --><!-- TemplateBeginIf cond="optionSpanish!=true" --><!-- TemplateBeginIf cond="OptionalLocalSearch" --><!--#include virtual="/TemplatePackage/includes/B/inc-skipmenuW-localSearch.html" --><!-- TemplateEndIf --><!-- TemplateBeginIf cond="OptionalLocalSearch!=true" --><!--#include virtual="/TemplatePackage/includes/B/inc-skipmenu-wide.html" --><!-- TemplateEndIf --><!-- TemplateEndIf -->
 <div id="wrapper">
-	<div class="top">
-	</div>
-	<div id="branding">
-		<!--#include virtual="/TemplatePackage/includes/B/inc-cdcHeader.html" -->
-		<div id="topic-title"><h2 style="font-weight:bold;">Chronic Disease GIS Exchange</h2>
-<div class="subtitle">Produced by the Division for Heart Disease and Stroke Prevention</div>
-</div>
-
-<!--#include virtual="/DHDSP/local/B/includes/breadcrumbs_GIS_gallery.html" -->
-
-	</div>
-	
-	<div id="content"><!-- TemplateBeginIf cond="content" -->
-		<div id="content-inner" style="margin:0;">
-						
+	<div class="top"></div>
+	<div id="wrapper-inner">
+		<div id="branding">
+			<!-- TemplateBeginIf cond="optionSpanish" --><!--#include virtual="/TemplatePackage/includes/B/esp/inc-cdcHeader.html" --><!-- TemplateEndIf --><!-- TemplateBeginIf cond="optionSpanish!=true" --><!--#include virtual="/TemplatePackage/includes/B/inc-cdcHeader.html" --><!-- TemplateEndIf -->
+			<div id="topic-title"><!-- TemplateBeginEditable name="topic-title" -->
+				<h2><a href="/TemplatePackage/beta/">Homepage [h2]</a></h2>
+				<!-- TemplateEndEditable -->
+			</div>
+		</div>
+		
+		<div id="content"><!-- TemplateBeginIf cond="content" -->
+			<!-- TemplateBeginIf cond="optionSpanish" --><!-- TemplateBeginEditable name="local-options-horizontal-esp" -->
+			<div class="pageOptions-horizontal">
+				<!-- ########## BREADCRUMBS START HERE ########## -->
+				<!--#include virtual="/TemplatePackage/local/B/esp/includes/breadcrumbs_wide.html" -->
+				<div class="pageOptions-inner">
+					<!--#include virtual="/TemplatePackage/includes/B/esp/text-sizer.html" -->
+					<ul class="forWide">
+						<li class="email"><a href="http://www.cdc.gov/email.do" onclick="openRequestedPopup(); return false;">&nbsp;</a></li>
+						<li class="print"><a href="javascript:window.print();">&nbsp;</a></li>
+						<li class="share" id="share"><a href="#">&nbsp;</a>
+							<ul class="services">
+								<!--#include virtual="/TemplatePackage/includes/B/esp/inc-subTags.html" -->
+							</ul>
+						</li>
+						<li class="subscribe"><a href="http://www.cdc.gov/emailupdates/">&nbsp;</a></li>
+						<li class="rss"><a href="#">&nbsp;</a></li>
+						<li class="podcast"><a href="#">&nbsp;</a></li>
+						<li><a href="test.pdf" title="Descargue esta p&aacute;gina [PDF - 38 KB]">&nbsp;</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- TemplateEndEditable -->
+			<!-- TemplateBeginEditable name="include-contactInfo1-esp" -->
+			<!--#include virtual="/TemplatePackage/local/B/esp/includes/inc-applicationContact.html" -->
+			<!-- TemplateEndEditable -->
+			<!-- TemplateEndIf --><!-- TemplateBeginIf cond="optionSpanish!=true" --><!-- TemplateBeginEditable name="local-options-horizontal" -->
+			<div class="pageOptions-horizontal">
+				<!-- ########## BREADCRUMBS START HERE ########## -->
+				<!--#include virtual="/TemplatePackage/local/B/includes/breadcrumbs_wide.html" -->
+				<div class="pageOptions-inner">
+					<!--#include virtual="/TemplatePackage/includes/B/text-sizer.html" -->
+					<ul class="forWide">
+						<li class="email"><a href="http://www.cdc.gov/email.do" onclick="openRequestedPopup(); return false;">&nbsp;</a></li>
+						<li class="print"><a href="javascript:window.print();">&nbsp;</a></li>
+						<li class="share"  id="share"><a href="#">&nbsp;</a>
+							<ul class="services">
+								<!--#include virtual="/TemplatePackage/includes/B/inc-subTags.html" -->
+							</ul>
+						</li>
+						<li class="subscribe"><a href="http://www.cdc.gov/emailupdates/">&nbsp;</a></li>
+						<li class="rss"><a href="#">&nbsp;</a></li>
+						<li class="podcast"><a href="#">&nbsp;</a></li>
+						<li><a href="sample.pdf" title="Download page [PDF - 38 KB]">&nbsp;</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- TemplateEndEditable -->
+			<!-- TemplateBeginEditable name="include-contactInfo1" -->
+			<!--#include virtual="/TemplatePackage/local/B/includes/inc-applicationContact.html" -->
+			<!-- TemplateEndEditable -->
+			<!-- TemplateEndIf -->
 			<div id="content-main">
 				<div class="main-inner">
-					<!-- TemplateBeginEditable name="features" -->
+					<!-- ########## CONTENT STARTS HERE ########## -->
+					<!-- TemplateBeginEditable name="content-main" -->
 					<div id="top-container">
 						<div id="mainGallery2">
 
@@ -97,104 +146,82 @@ $(document).ready(function() {
 								<li><a href="../about.html">Learn more about the site</a></li>
 							</ul>
 						</div>
-					<!-- End #top-container --></div><!-- TemplateEndEditable -->
-				
-					<div id="bottom-container"><!-- TemplateBeginEditable name="content-main" -->
-	
-					<!-- TemplateEndEditable --><!-- End #bottom-container --></div>
-					
-				<!-- End .main-inner --></div>
-			<!-- End #content-main--></div>
-		<!-- End #content-inner --></div>
+					<!-- End #top-container --></div>
+					<!-- TemplateEndEditable -->
+					<!-- TemplateBeginIf cond="optionSpanish" --><!--#include virtual="/TemplatePackage/includes/B/esp/external-links.html" --><!-- TemplateEndIf --><!-- TemplateBeginIf cond="optionSpanish!=true" --><!--#include virtual="/TemplatePackage/includes/B/external-links.html" --><!-- TemplateEndIf -->
+				<!-- /end .main-inner --></div>
+			<!-- /end #content-main--></div>
+			<!-- TemplateEndIf -->
+		<!-- /end #content --></div>
 		
-		<!-- ########## RIGHT COLUMN STARTS HERE ########## -->
-
+		<div class="preFoot">
+			<!-- TemplateBeginIf cond="optionSpanish" --><!--#include virtual="/TemplatePackage/includes/B/esp/inc-plugins.html" -->
+			<!-- TemplateBeginEditable name="local-options-horizontal2-esp" -->
+			<div class="pageOptions-horizontal">
+				<div class="pageOptions-inner2">
+					<ul class="services">
+						<!--#include virtual="/TemplatePackage/includes/B/esp/global-options.html" -->
+						<li class="subscribe"><a href="http://www.cdc.gov/spanish/suscribase.html">Actualizaciones</a></li>
+						<li class="rss"><a href="http://www.cdc.gov/spanish/rss.html">Suscr&iacute;base</a></li>
+						<li class="podcast"><a href="http://www.cdc.gov/spanish/podcast.html">Escuche</a></li>
+						<li><a href="test.pdf" title="Descargue esta p&aacute;gina [PDF - 38 KB]">Descargue</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- TemplateEndEditable -->
+			<!-- TemplateBeginEditable name="include-contactInfo2-esp" -->
+			<!--#include virtual="/TemplatePackage/local/B/esp/includes/inc-applicationContact.html" -->
+			<!-- TemplateEndEditable -->
+			<div id="datestamp"><!-- TemplateBeginEditable name="date-stamp-esp" -->
+				<ul>
+					<li class="last-reviewed">Esta p&aacute;gina fue revisada el <span>31 de Julio del 2009</span></li>
+					<li class="last-updated">Esta p&aacute;gina fue modificada el <span>31 de Julio del 2009</span></li>
+					<li class="content-source">Fuente del contenido: <a href="http://www.cdc.gov/">Centros para el Control y la Prevenci&oacute;n de Enfermedades</a></li>
+				</ul>
+			<!-- TemplateEndEditable --></div><!-- TemplateEndIf --><!-- TemplateBeginIf cond="optionSpanish!=true" --><!--#include virtual="/TemplatePackage/includes/B/inc-plugins.html" -->
+			<!-- TemplateBeginEditable name="local-options-horizontal2" -->
+			<div class="pageOptions-horizontal">
+				<div class="pageOptions-inner2">
+					<ul class="services">
+						<!--#include virtual="/TemplatePackage/includes/B/global-options.html" -->
+						<li class="subscribe"><a href="http://www.cdc.gov/emailupdates/">Updates</a></li>
+						<li class="rss"><a href="">Subscribe</a></li>
+						<li class="podcast"><a href="">Listen</a></li>
+						<li><a href="sample.pdf" title="Download page [PDF - 38 KB]">Download</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- TemplateEndEditable -->
+			<!-- TemplateBeginEditable name="include-contactInfo2" -->
+			<!--#include virtual="/TemplatePackage/local/B/includes/inc-applicationContact.html" -->
+			<!-- TemplateEndEditable -->
+			<div id="datestamp"><!-- TemplateBeginEditable name="date-stamp" -->
+				<ul>
+					<li class="last-reviewed">Page last reviewed: <span>July 31, 2009</span></li>
+					<li class="last-updated">Page last updated: <span>July 31, 2009</span></li>
+					<li class="content-source">Content source: <a href="http://www.cdc.gov/">Centers for Disease Control and Prevention</a></li>
+				</ul>
+			<!-- TemplateEndEditable --></div><!-- TemplateEndIf -->
+		</div>
+		
+		<!-- TemplateBeginIf cond="optionSpanish" --><!--#include virtual="/TemplatePackage/includes/B/esp/inc-cdcFooter.html" --><!-- TemplateEndIf --><!-- TemplateBeginIf cond="optionSpanish!=true" --><!--#include virtual="/TemplatePackage/includes/B/inc-cdcFooter.html" --><!-- TemplateEndIf -->
+		<!-- TemplateBeginIf cond="OptionalLocalSearch" -->
+		<!--#include virtual="/TemplatePackage/includes/B/inc-localSearch_a.html" -->
+		<!-- TemplateBeginEditable name="EditLocalSearch" -->
+		<!--#include virtual="/TemplatePackage/local/B/includes/inc-localSearch_b.html"-->
+		<!-- TemplateEndEditable -->
+		<!--#include virtual="/TemplatePackage/includes/B/inc-localSearch_c.html" -->
 		<!-- TemplateEndIf -->
+		<!-- TemplateBeginIf cond="optionSpanish" --><!-- TemplateBeginIf cond="_document['OptionalLocalA-Z']" --><!--#include virtual="/TemplatePackage/includes/B/esp/inc-azListMultiPage-global.html" --><!-- TemplateEndIf --><!-- TemplateBeginIf cond="_document['OptionalLocalA-Z']!=true" --><!--#include virtual="/TemplatePackage/includes/B/esp/az-list.html" --><!-- TemplateEndIf --><!-- TemplateEndIf --><!-- TemplateBeginIf cond="optionSpanish!=true" --><!-- TemplateBeginIf cond="_document['OptionalLocalA-Z']" --><!--#include virtual="/TemplatePackage/includes/B/inc-azListMultiPage-global.html" --><!-- TemplateEndIf --><!-- TemplateBeginIf cond="_document['OptionalLocalA-Z']!=true" --><!--#include virtual="/TemplatePackage/includes/B/az-list.html" --><!-- TemplateEndIf --><!-- TemplateEndIf -->
+	<!-- /end #wrapper-inner --></div>
 	
-	<div class="preFoot">
-		<div class="pageOptions-horizontal">
-			<ul class="services">
-				<li class="email"><a href="http://www.cdc.gov/email.do" onclick="openRequestedPopup(); return false;">Email</a></li>
+<!-- /end #wrapper --></div>
 
-<li class="print"><a href="javascript:window.print();">Print</a></li>
-
-<li class="share" id="share-horizontal"><a href="#">Share</a>
-
-	<ul>
-
-		<li class="addthisto">Add this to...</li>
-
-<li class="favorites"><a href="javascript:openBookmarkSite('favorites');" class="skip">Favorites</a></li>
-
-<li class="delicious"><a href="#" class="skip" onclick="openBookmarkSite('delicious');">Del.icio.us</a></li>
-
-<li class="digg"><a href="#" class="skip" onclick="openBookmarkSite('digg');">Digg</a></li>
-
-<li class="facebook"><a href="#" class="skip" onclick="openBookmarkSite('facebook');">Facebook</a></li>
-
-<li class="google"><a href="#" class="skip" onclick="openBookmarkSite('google');">Google Bookmarks</a></li>
-
-<li class="technorati"><a href="#" class="skip" onclick="openBookmarkSite('technorati');">Technorati</a></li>
-
-<li class="yahoo"><a href="#" class="skip" onclick="openBookmarkSite('yahoo-myweb');">Yahoo MyWeb</a></li>
-
-	</ul>
-
-</li>			</ul>
-		</div>
-		
-		<div id="datestamp">
-			<ul>
-				<li class="last-reviewed">Page last reviewed: <span>April 27, 2011</span></li>
-				<li class="last-updated">Page last updated: <span>April 27, 2011</span></li>
-				<li class="content-source">Content source: <a href="http://www.cdc.gov/">Centers for Disease Control and Prevention</a></li>
-			</ul>
-		</div>
-  	</div>
-	
-	<!-- End #content --></div>
-
-	<div id="siteinfo">
-
-	<div id="siteinfo-nav">
-
-		<ul class="menu">
-
-			<li><a href="http://www.cdc.gov/">Home</a></li>
-
-			<li><a href="http://www.cdc.gov/az/a.html">A-Z Index</a></li>
-
-			<li><a href="http://www.cdc.gov/Other/site_map.html">Site Map</a></li>
-
-			<li><a href="http://www.cdc.gov/Other/policies.html">Policies</a></li>
-
-			<li><a href="http://www.cdc.gov/Other/about_cdcgov.html">About CDC.gov</a></li>
-
-			<li><a href="http://www.cdc.gov/Other/link.html">Link to Us</a></li>
-
-			<li><a href="http://www.cdc.gov/Other/languages/">All Languages</a></li>
-
-			<li><a href="http://www.cdc.gov/mobile/">CDC Mobile</a></li>
-
-			<li class="last-child"><a href="http://www.cdc.gov/contact/">Contact CDC</a></li>
-
-		</ul>
-
-	</div>
-
-	<div id="siteinfo-credits">
-
-		<div id="siteinfo-logos"><a href="http://www.usa.gov/"><img id="logo_usagov" src="/TemplatePackage/images/logo_usagov.gif" alt="USA.gov: The U.S. Government's Official Web Portal" width="188" height="55" border="0" /></a><a href="http://www.hhs.gov/"><img id="logo_dhhs" src="/TemplatePackage/images/logo_dhhs.gif" alt="Department of Health and Human Services" width="61" height="55" border="0" /></a></div>
-
-		<address>Centers for Disease Control and Prevention &nbsp; 1600 Clifton Rd. Atlanta, GA 30333, USA<br />
-
-		800-CDC-INFO (800-232-4636)	TTY: (888) 232-6348, 24 Hours/Every Day - <a href="mailto:cdcinfo@cdc.gov">cdcinfo@cdc.gov</a></address>
-
-	</div>
-
-</div>        	
-<!-- End #wrapper --></div>
-
+<!--#include virtual="/TemplatePackage/includes/B/siteCatalyst_a.html" -->
+<!-- TemplateBeginEditable name="metrics" -->
+<!--#include virtual="/TemplatePackage/local/B/includes/siteCatalyst_b.html"-->
+<!-- TemplateEndEditable -->
+<!--#include virtual="/TemplatePackage/includes/B/siteCatalyst_c.html" -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -204,6 +231,5 @@ try {
 var pageTracker = _gat._getTracker("UA-1177695-7");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-<div id="tooltipContainer"></div>
-</body>
-</html>
+</body><!-- InstanceEndEditable -->
+<!-- InstanceEnd --></html>
